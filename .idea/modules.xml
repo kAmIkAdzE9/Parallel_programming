@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Lab_1/Lab_1.iml" filepath="$PROJECT_DIR$/Lab_1/Lab_1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/Paraller_programming.iml" filepath="$PROJECT_DIR$/.idea/Paraller_programming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Parallel_programs/Parallel_programs.iml" filepath="$PROJECT_DIR$/Parallel_programs/Parallel_programs.iml" />
     </modules>
   </component>
 </project>

@@ -1,24 +1,24 @@
 package com.company;
 
 public class ParallelSum {
-    private  ParallelWorker[] sums;
+    private  MyThread[] sums;
     private int numOfThreads;
 
     public ParallelSum(int numOfThreads) {
         this.numOfThreads = numOfThreads;
-        this.sums = new ParallelWorker[numOfThreads];
+        this.sums = new MyThread[numOfThreads];
     }
 
-    public long getSum(int[] arr) {
+    public long getSum(long[] arr) {
         int step = (int) Math.ceil(arr.length * 1.0 / numOfThreads);
 
         for (int i = 0; i < numOfThreads; i++) {
-            sums[i] = new ParallelWorker(arr, i * step, (i + 1) * step);
+            sums[i] = new MyThread(arr, i * step, (i + 1) * step);
             sums[i].start();
         }
 
         try {
-            for(ParallelWorker worker : sums) {
+            for(MyThread worker : sums) {
                 worker.join();
             }
         }
@@ -28,7 +28,7 @@ public class ParallelSum {
 
         long total = 0;
 
-        for(ParallelWorker worker : sums) {
+        for(MyThread worker : sums) {
             total += worker.getPartialSum();
         }
 
